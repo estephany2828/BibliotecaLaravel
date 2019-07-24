@@ -14,3 +14,27 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/inicio', 'DashboardController@index');
+
+
+// Route::get('/inicio', function () {
+//     return view('inicio');
+// });
+// Route::get('/biblioteca', function () {
+//     return view('biblioteca');
+// });
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Route::get('/reserva', function () {
+//     return view('reserva');
+// });
+// Route::get('/reservas', function () {
+//     return view('reservas');
+// });
+// Route::get('/user', function () {
+//     return view('user');
+// });
+// Route::get('/users', function () {
+//     return view('users');
+// });
