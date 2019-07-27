@@ -35,7 +35,7 @@
       <div class="nav-header-logo">
         <a class="nav-logo">
           <!-- Logo -->
-          <img src="../assets/img/unicaucalogoB.png" width="70" height="70" alt="?">
+          <!-- <img src="../assets/img/unicaucalogoB.png" width="70" height="70" alt="?"> -->
           <!-- Title -->
           <span class="nav-title">
             Universidad del Cauca
@@ -52,12 +52,11 @@
        
       <div class="btn-group" dropdown>       
           <button id="button-basic" dropdownToggle type="button"
-           class="btn btn-primary dropdown-toggle  mdl-js-button mdl-button--raised mdl-button--colored btn-login"  aria-controls="dropdown-basic">
+           class="btn btn-primary dropdown-toggle  mdl-js-button mdl-button--raised mdl-button--colored btn-login"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Login
               <i class="fas fa-user-circle"></i>
       </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
-              role="menu" aria-labelledby="button-basic">
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenuButton"git >
             <li role="menuitem"><a class="dropdown-item"  href="#">Iniciar Sesion</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">user</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Informacion</a></li>
