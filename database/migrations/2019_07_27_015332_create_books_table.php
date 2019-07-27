@@ -14,6 +14,9 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
+            // $table->bigIncrements('id');
+            // $table->timestamps();
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('img');
@@ -21,7 +24,8 @@ class CreateBooksTable extends Migration
             $table->string('agno');
             $table->string('isbn');
             $table->integer('disponibles');
-            $table->string('categoria');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->rememberToken();
             $table->timestamps();
         });
