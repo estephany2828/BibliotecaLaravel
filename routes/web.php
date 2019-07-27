@@ -14,7 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/index', function () {
+    return view('base.index');
+});
 Route::get('/inicio', 'DashboardController@index');
+Route::resource('/users', 'UserController');
 
 
 // Route::get('/inicio', function () {
