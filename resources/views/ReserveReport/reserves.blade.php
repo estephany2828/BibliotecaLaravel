@@ -2,12 +2,12 @@
 @section('content')
 <div class="row">
     <div class="col">
-    <h2>TABLA DE USUARIOS</h2>
+    <h2>TABLA DE RESERVAS</h2>
     </div>
 </div>
 <div class="row">
     <div class="col-10">
-    <a class="btn btn-danger" href="/users/create"> <i class="fas fa-user-plus"></i> Create New Users</a>
+    <a class="btn btn-danger" href="/reserves/create"> <i class="fas fa-user-plus"></i> Create New Reserves</a>
     <br>
     </div>
 </div>
@@ -23,11 +23,11 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($users as $user)
+    @foreach($reserves as $reserve)
        <tr>       
-           <td>{{$user-> id}}</td>
-           <td>{{$user-> name}}</td>
-           <td>{{$user-> email}}</td>
+           <td>{{$reserve-> iduser}}</td>
+           <td>{{$reserve-> book}}</td>
+           <td>{{$reserve-> selectedReserva}}</td>
            <td>            
             <a class='btn btn-info btn-xs'><span  class="glyphicon glyphicon-edit"></span> Edit</a>
             <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>Supr</a>

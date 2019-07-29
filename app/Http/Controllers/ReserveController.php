@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+use App\Reserve;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ReserveController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-       
-        return view('UserReport.users', [
-            'users' => User::all()
+        return view('ReserveReport.reserves', [
+            'reserves' => Reserve::all()
         ]);
         
     }
@@ -27,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('UserReport.create');
+        return view('ReserveReport.create');
     }
 
     /**
@@ -38,15 +37,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $report= new User();
-        $report->name = $request->get('name');
-        $report->email = $request->get('email');
-        $report->password = $request->get('pass');
+        $report= new Reserves();
+        $report->iduser = $request->get('name');
+        $report->book = $request->get('email');
+        $report->selectedReserva = $request->get('pass');
+        $report->dateReserva = $request->get('pass');
+        $report->dateEntrega = $request->get('pass');
              
         $report->save();
 
-        return redirect('/users');
-        
+        return redirect('/reserves');
     }
 
     /**

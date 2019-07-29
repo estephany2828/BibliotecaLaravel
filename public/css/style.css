@@ -90,6 +90,9 @@ h2, h3, h4, h5, h6{
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
     padding: 0px 4px 4px 30px;
 }
+.mdl-layout__drawer>.mdl-layout-title{
+    padding: 10px;
+}
 
 .menu-navegation a{   
     font-family: 'Open Sans';
@@ -106,17 +109,16 @@ h2, h3, h4, h5, h6{
     text-decoration: none;
     text-align: left;
     width: 93%;
-    word-wrap: break-word;
-    
+    word-wrap: break-word;    
 }
 
-
 /* CONTENIDO */
+
 
 .conte-pages{
     min-height: 100vh;    
     background: #f3f3f3;
-    text-align: center;   
+    /* text-align: center;    */
     /* margin: 90px 0px 0px 50px;    */
     padding: 90px 3rem 0rem 25rem;
     width: 100%;
@@ -128,3 +130,29 @@ h2, h3, h4, h5, h6{
     padding: 10px;
     margin: 10px;
 }
+
+/* FORMULARIOS */
+.example-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .example-container > * {
+    width: 50%;
+    text-align: left;
+    font-size: 1em;
+  }
+  .titulo-prinicpal h2{
+    font-size: 2em;
+    text-align: center;
+  }
+ .btn-aling{
+     display:flex;
+     justify-content: center;
+ }
+ .btn-class-aling{     
+
+ }
