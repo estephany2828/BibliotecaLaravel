@@ -11,6 +11,11 @@ class ReserveController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+         $this->middleware('auth');
+     }
+
     public function index()
     {
         return view('ReserveReport.reserves', [
@@ -37,15 +42,20 @@ class ReserveController extends Controller
      */
     public function store(Request $request)
     {
-        $report= new Reserves();
-        $report->iduser = $request->get('name');
-        $report->book = $request->get('email');
-        $report->selectedReserva = $request->get('pass');
-        $report->dateReserva = $request->get('pass');
-        $report->dateEntrega = $request->get('pass');
-             
-        $report->save();
+        $validaData = $request->validate([
+      
+            'dateReserva' => 'required|date|after_or_equal:today',
+            'dateEntrega' => 'required|date|after:dateReserva',
+            'iduser' => 'required|numeric',
 
+        ]);
+        $report= new Reserve();
+        $report->iduser = $request->get('iduser');
+        $report->book = $request->get('book');
+        $report->selectedReserva = $request->get('selectedReserva');
+        $report->dateReserva = $request->get('dateReserva');
+        $report->dateEntrega = $request->get('dateEntrega');             
+        $report->save();
         return redirect('/reserves');
     }
 
@@ -68,7 +78,10 @@ class ReserveController extends Controller
      */
     public function edit($id)
     {
-        //
+        $report = Reserve::findOrFail($id);
+        return view('ReserveReport.edit', [
+            'report' =>$report
+        ]);
     }
 
     /**
@@ -80,7 +93,14 @@ class ReserveController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $report = Reserve::findOrFail($id);
+        $report->iduser = $request->get('iduser');
+        $report->book = $request->get('book');
+        $report->selectedReserva = $request->get('selectedReserva');
+        $report->dateReserva = $request->get('dateReserva');
+        $report->dateEntrega = $request->get('dateEntrega');
+        $report->save();
+        return redirect('/reserves');        
     }
 
     /**
@@ -91,6 +111,15 @@ class ReserveController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $report = Reserve::findOrFail($id);
+        $report->delete();
+        return redirect('/reserves');
+    }
+    public function confirmDelete($id){
+        // dd('confirmDelete'. $id); 
+        $report = Reserve::findOrFail($id);   
+        return view('ReserveReport.delete', [
+            'report' => $report
+        ]);  
     }
 }

@@ -12,13 +12,15 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">
-    <table class="table">
+    <div class="col table-s">
+    <table class="table table-size">
     <thead class="thead-dark">
         <tr>
         <th scope="col">Nro</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Correo</th>
+        <th scope="col">Book</th>
+        <th scope="col">Reserved days</th>
+        <th scope="col">Reservation day</th>
+        <th scope="col">Deadline</th>
         <th scope="col"></th>
         </tr>
     </thead>
@@ -28,9 +30,11 @@
            <td>{{$reserve-> iduser}}</td>
            <td>{{$reserve-> book}}</td>
            <td>{{$reserve-> selectedReserva}}</td>
-           <td>            
-            <a class='btn btn-info btn-xs'><span  class="glyphicon glyphicon-edit"></span> Edit</a>
-            <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>Supr</a>
+           <td>{{$reserve-> dateReserva}}</td>
+           <td>{{$reserve-> dateEntrega}}</td>
+           <td class="btn-crud">            
+            <a class='btn btn-info btn-xs' href="/reserves/{{$reserve->id}}/edit"><span  class="glyphicon glyphicon-edit"></span> Edit</a>
+            <a class="btn btn-danger btn-xs" href="/reserves/{{$reserve->id}}/confirmDelete"><span class="glyphicon glyphicon-remove"></span>Supr</a>
            </td>
        </tr>
         @endforeach

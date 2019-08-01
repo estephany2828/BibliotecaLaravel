@@ -18,8 +18,11 @@ Route::get('/', function () {
     return view('base.index');
 });
 Route::get('/inicio', 'DashboardController@index');
+Route::get('/book', 'DashboardController@index');
 Route::resource('/users', 'UserController');
 Route::resource('/reserves', 'ReserveController');
+Route::get('/users/{id}/confirmDelete', 'UserController@confirmDelete');
+Route::get('/reserves/{id}/confirmDelete', 'ReserveController@confirmDelete');
 
 
 // Route::get('/inicio', function () {
@@ -43,3 +46,7 @@ Route::resource('/reserves', 'ReserveController');
 // Route::get('/users', function () {
 //     return view('users');
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

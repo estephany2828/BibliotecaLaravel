@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -38,10 +40,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validaData = $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|E-Mail|email|unique:users,email',
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            // 'pass' => 'min:6|required_with:passv|same:passv',
+            // 'passv' => 'required|min:6'
+
+
+        ]);
         $report= new User();
         $report->name = $request->get('name');
         $report->email = $request->get('email');
-        $report->password = $request->get('pass');
+        $report->password = Hash::make($request->get('password'));
+        // 'password' => Hash::make($data['password']),
+        // $report->password_confirmation = $request->get('passv');
              
         $report->save();
 
@@ -68,7 +81,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $report = User::findOrFail($id);
+        return view('UserReport.edit', [
+            'report' =>$report
+        ]);
     }
 
     /**
@@ -80,7 +96,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $report = User::findOrFail($id);
+        $report->name = $request->get('name');
+        $report->email = $request->get('email');
+        $report->password = Hash::make($request->get('password'));
+        $report->save();
+        return redirect('/users');
     }
 
     /**
@@ -91,6 +112,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $report = User::findOrFail($id);
+        $report->delete();
+        return redirect('/users');
+    }
+    public function confirmDelete($id){
+        // dd('confirmDelete'. $id); 
+        $report = User::findOrFail($id);   
+        return view('UserReport.delete', [
+            'report' => $report
+        ]);  
     }
 }
