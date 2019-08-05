@@ -161,6 +161,10 @@ h2, h3, h4, h5, h6{
     font-size: 2em;
     text-align: center;
   }
+  /* crud */
+  .conte-crud{
+      margin: 10px
+  }
  .btn-aling{
      display:flex;
      justify-content: center;
@@ -176,10 +180,14 @@ h2, h3, h4, h5, h6{
      justify-content: center;
  }
  .table-size{
-    width: 70%;
+    width: 100%;
 
  }
  .btn-crud{
     display: flex;
     justify-content: center;
+ }
+ .text-modi{
+     text-align: left;
+     margin: 0px 0px 0px 0px;
  }

@@ -15,10 +15,14 @@
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return view('base.index');
+    return view('Book.biblioteca');
+});
+
+Route::get('/info', function () {
+    return view('base.info');
 });
 Route::get('/inicio', 'DashboardController@index');
-Route::get('/book', 'DashboardController@index');
+Route::resource('/books', 'BookController');
 Route::resource('/users', 'UserController');
 Route::resource('/reserves', 'ReserveController');
 Route::get('/users/{id}/confirmDelete', 'UserController@confirmDelete');

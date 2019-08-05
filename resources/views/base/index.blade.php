@@ -134,7 +134,7 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Menu</span>
       <nav class="mdl-navigation menu-navegation">
-        <a class="mdl-navigation__link " >
+        <a class="mdl-navigation__link" href="{{ url('/') }}" >
             <i class="fas fa-book"></i>
             Biblioteca Virtual</a>
         <a class="mdl-navigation__link " href="{{ url('register') }}" >

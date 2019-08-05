@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-10">
+    <div class="col text-modi">
     <a class="btn btn-danger" href="/reserves/create"> <i class="fas fa-user-plus"></i> Create New Reserves</a>
     <br>
     </div>

@@ -1,12 +1,12 @@
-@extends('base.index')
-@section('content')
+@extends('base.info')
+@section('admin')
 <div class="row">
     <div class="col titulo-prinicpal">
     <h2>TABLA DE USUARIOS</h2>
     </div>
 </div>
 <div class="row ">
-    <div class="col">
+    <div class="col text-modi">
     <a class="btn btn-danger" href="/users/create"> <i class="fas fa-user-plus"></i> Create New Users</a>
     <br>
     </div>

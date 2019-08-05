@@ -1,28 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Reserve;
+use App\Book;
 use Illuminate\Http\Request;
 
-class ReserveController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    //  seguridad para que no pueda entrar si no se ha logueado
-     public function __construct(){
-         $this->middleware('auth');
-     }
-
     public function index()
     {
-        return view('ReserveReport.reserves', [
-            'reserves' => Reserve::all()
+        return view('Book.book', [
+            'books' => Book::all()
         ]);
-        
     }
 
     /**
@@ -32,7 +25,7 @@ class ReserveController extends Controller
      */
     public function create()
     {
-        return view('ReserveReport.create');
+        return view('Book.create');
     }
 
     /**
@@ -68,7 +61,7 @@ class ReserveController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -101,7 +94,7 @@ class ReserveController extends Controller
         $report->dateReserva = $request->get('dateReserva');
         $report->dateEntrega = $request->get('dateEntrega');
         $report->save();
-        return redirect('/reserves');        
+        return redirect('/reserves');  
     }
 
     /**
@@ -112,13 +105,13 @@ class ReserveController extends Controller
      */
     public function destroy($id)
     {
-        $report = Reserve::findOrFail($id);
+        $report = Book::findOrFail($id);
         $report->delete();
         return redirect('/reserves');
     }
     public function confirmDelete($id){
         // dd('confirmDelete'. $id); 
-        $report = Reserve::findOrFail($id);   
+        $report = Book::findOrFail($id);   
         return view('ReserveReport.delete', [
             'report' => $report
         ]);  
