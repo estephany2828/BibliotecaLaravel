@@ -14,6 +14,15 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    /*
+    / Aplication Services Providers 
+    */
+    Intervention\Image\ImageServiceProvider::class,
+
+    /*  
+    / Aliases
+    */
+    'Image' => Intervention\Image\Facades\Image::class,
 
     /*
     |--------------------------------------------------------------------------

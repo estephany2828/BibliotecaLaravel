@@ -17,6 +17,13 @@ class BookController extends Controller
             'books' => Book::all()
         ]);
     }
+    public function biblio()
+    {
+        return view('Book.biblioteca', [
+            'books' => Book::all()
+        ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -42,6 +49,7 @@ class BookController extends Controller
             'autor' => 'required',
             'agno' => 'required|numeric',
             'isbn' => 'required',
+            'img' => 'imagen',
 
         ]);
         $report= new Book();
@@ -121,5 +129,18 @@ class BookController extends Controller
         return view('Book.delete', [
             'report' => $report
         ]);  
+    }
+    public function confirm($id){
+        // dd('confirmDelete'. $id); 
+        $report = Book::findOrFail($id);   
+        return view('ReserveReport.create', [
+            'report' => $report
+        ]);  
+        
+    }
+    public function confirmm($id){
+        // dd('confirmDelete'. $id); 
+        return view('ReserveReport.create');  
+        
     }
 }

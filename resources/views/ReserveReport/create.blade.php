@@ -14,9 +14,9 @@
     @csrf
         <div class="form-group example-container">
         <label for="name">IdUser</label>
-        <input type="text" class="form-control" id="iduser" name="iduser" placeholder="User" value="2" >
+        <input type="text" class="form-control" id="iduser" name="iduser" placeholder="User" value=" {{ Auth::user()->name }} " >
         <label for="book">Book</label>
-        <input type="text" class="form-control" id="book" name="book" placeholder="Book" value="{{ old('book')}}" required>
+        <input type="text" class="form-control" id="book" name="book" placeholder="Book" value=" {{$report->id}} " required>
         
       <label for="inputState">reserved days</label>
       <select id="selectedReserva" name="selectedReserva"  class="form-control" required >

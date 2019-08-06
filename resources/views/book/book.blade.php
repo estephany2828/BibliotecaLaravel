@@ -30,7 +30,8 @@
     @foreach($books as $book)
        <tr>       
            <td>{{$book-> id}}</td>
-           <td>{{$book-> img}}</td>
+           <td> <img src="img/{{ $book->img }}" width="70" height="70" alt="?"></td>
+           
            <td>{{$book-> titulo}}</td>
            <td>{{$book-> autor}}</td>
            <td>{{$book-> agno}}</td>

@@ -37,7 +37,8 @@
       <div class="nav-header-logo">
         <a class="nav-logo">
           <!-- Logo -->
-          <!-- <img src="../assets/img/unicaucalogoB.png" width="70" height="70" alt="?"> -->
+          <img src="../img/unicaucalogoB.png" width="70" height="70" alt="?">
+          <!-- {{ asset('img/unicaucalogoB.png') }}; -->
           <!-- Title -->
           <span class="nav-title">
             Universidad del Cauca

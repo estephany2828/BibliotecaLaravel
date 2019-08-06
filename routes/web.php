@@ -14,9 +14,9 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('Book.biblioteca');
-});
+// Route::get('/', function () {
+//     return view('Book.biblioteca');
+// });
 
 Route::get('/info', function () {
     return view('base.info');
@@ -28,6 +28,8 @@ Route::resource('/reserves', 'ReserveController');
 Route::get('/users/{id}/confirmDelete', 'UserController@confirmDelete');
 Route::get('/reserves/{id}/confirmDelete', 'ReserveController@confirmDelete');
 Route::get('/books/{id}/confirmDelete', 'BookController@confirmDelete');
+Route::get('/reserves/create/{id}', 'BookController@confirm');
+Route::get('', 'BookController@biblio');
 
 
 // Route::get('/inicio', function () {
