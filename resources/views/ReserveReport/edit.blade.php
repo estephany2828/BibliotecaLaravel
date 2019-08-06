@@ -15,7 +15,7 @@
     @method('PUT')
         <div class="form-group example-container">
         <label for="name">IdUser</label>
-        <input type="numer" value="{{$report->iduser}}" class="form-control" id="iduser" name="iduser" placeholder="User">
+        <input type="text" value="{{$report->iduser}}" class="form-control" id="iduser" name="iduser" placeholder="User">
         <label for="book">Book</label>
         <input type="text" value="{{$report->book}}"class="form-control" id="book" name="book" placeholder="Book">
         

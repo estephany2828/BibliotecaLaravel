@@ -47,7 +47,7 @@ class ReserveController extends Controller
       
             'dateReserva' => 'required|date|after_or_equal:today',
             'dateEntrega' => 'required|date|after:dateReserva',
-            'iduser' => 'required|numeric',
+            'iduser' => 'required',
 
         ]);
         $report= new Reserve();
