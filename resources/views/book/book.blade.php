@@ -2,7 +2,7 @@
 @section('admin')
 <div class="row">
     <div class="col titulo-prinicpal">
-    <h2>TABLA DE USUARIOS</h2>
+    <h2>TABLA DE LIBROS</h2>
     </div>
 </div>
 <div class="row ">
@@ -37,8 +37,8 @@
            <td>{{$book-> isbn}}</td>
            <td>{{$book-> disponibles}}</td>
            <td class="btn-crud">            
-            <a class='btn btn-info btn-xs'href="/users/{{$book->id}}/edit"><span  class="glyphicon glyphicon-edit"></span> Edit</a>
-            <a class="btn btn-danger btn-xs" href="/users/{{$book->id}}/confirmDelete"><span class="glyphicon glyphicon-remove"></span>Supr</a>
+            <a class='btn btn-info btn-xs'href="/books/{{$book->id}}/edit"><span  class="glyphicon glyphicon-edit"></span> Edit</a>
+            <a class="btn btn-danger btn-xs" href="/books/{{$book->id}}/confirmDelete"><span class="glyphicon glyphicon-remove"></span>Supr</a>
            </td>
        </tr>
         @endforeach

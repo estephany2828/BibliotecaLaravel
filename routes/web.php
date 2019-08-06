@@ -27,6 +27,7 @@ Route::resource('/users', 'UserController');
 Route::resource('/reserves', 'ReserveController');
 Route::get('/users/{id}/confirmDelete', 'UserController@confirmDelete');
 Route::get('/reserves/{id}/confirmDelete', 'ReserveController@confirmDelete');
+Route::get('/books/{id}/confirmDelete', 'BookController@confirmDelete');
 
 
 // Route::get('/inicio', function () {

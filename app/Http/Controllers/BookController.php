@@ -38,19 +38,23 @@ class BookController extends Controller
     {
         $validaData = $request->validate([
       
-            'dateReserva' => 'required|date|after_or_equal:today',
-            'dateEntrega' => 'required|date|after:dateReserva',
-            'iduser' => 'required|numeric',
+            'titulo' => 'required',
+            'autor' => 'required',
+            'agno' => 'required|numeric',
+            'isbn' => 'required',
 
         ]);
-        $report= new Reserve();
-        $report->iduser = $request->get('iduser');
-        $report->book = $request->get('book');
-        $report->selectedReserva = $request->get('selectedReserva');
-        $report->dateReserva = $request->get('dateReserva');
-        $report->dateEntrega = $request->get('dateEntrega');             
+        $report= new Book();
+        $report->titulo = $request->get('titulo');
+        $report->img = $request->get('img');
+        $report->autor = $request->get('autor');
+        $report->agno = $request->get('agno');
+        $report->isbn = $request->get('isbn');
+        $report->disponibles = $request->get('disponibles');             
+        $report->category_id = $request->get('category');             
+                
         $report->save();
-        return redirect('/reserves');
+        return redirect('/books');
     }
 
     /**
@@ -72,8 +76,8 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $report = Reserve::findOrFail($id);
-        return view('ReserveReport.edit', [
+        $report = Book::findOrFail($id);
+        return view('Book.edit', [
             'report' =>$report
         ]);
     }
@@ -87,14 +91,16 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $report = Reserve::findOrFail($id);
-        $report->iduser = $request->get('iduser');
-        $report->book = $request->get('book');
-        $report->selectedReserva = $request->get('selectedReserva');
-        $report->dateReserva = $request->get('dateReserva');
-        $report->dateEntrega = $request->get('dateEntrega');
+        $report = Book::findOrFail($id);
+        $report->titulo = $request->get('titulo');
+        $report->img = $request->get('img');
+        $report->autor = $request->get('autor');
+        $report->agno = $request->get('agno');
+        $report->isbn = $request->get('isbn');
+        $report->disponibles = $request->get('disponibles');  
+        $report->category_id = $request->get('category');     
         $report->save();
-        return redirect('/reserves');  
+        return redirect('/books');  
     }
 
     /**
@@ -107,12 +113,12 @@ class BookController extends Controller
     {
         $report = Book::findOrFail($id);
         $report->delete();
-        return redirect('/reserves');
+        return redirect('/books');
     }
     public function confirmDelete($id){
         // dd('confirmDelete'. $id); 
         $report = Book::findOrFail($id);   
-        return view('ReserveReport.delete', [
+        return view('Book.delete', [
             'report' => $report
         ]);  
     }

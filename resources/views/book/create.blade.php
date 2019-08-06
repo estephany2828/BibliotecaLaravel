@@ -14,18 +14,21 @@
     @csrf
         <div class="form-group example-container">
         <label for="name">Titulo</label>
-        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="titulo" value="{{ old('titulo')}}"  >
-        <label for="book">Autor</label>
-        <input type="text" class="form-control" id="autor" name="autor" placeholder="autor" value="{{ old('autor')}}" required>
-        <label for="book">Año</label>
-        <input type="text" class="form-control" id="agno" name="agno" placeholder="agno" value="{{ old('agno')}}" required>
-        <label for="book">ISBN</label>
-        <input type="text" class="form-control" id="isbn" name="isbn" placeholder="isbn" value="{{ old('isbn')}}" required>
-        <label for="book">Disponibles</label>
-        <input type="text" class="form-control" id="disponibles" name="disponibles" placeholder="disponibles" value="{{ old('disponibles')}}" required>
+        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" value="{{ old('titulo')}}"  >
+        <label for="titulo">Autor</label>
+        <input type="text" class="form-control" id="autor" name="autor" placeholder="Autor" value="{{ old('autor')}}" required>
+        <label for="agno">Año</label>
+        <input type="numer" class="form-control" id="agno" name="agno" placeholder="Año" value="{{ old('agno')}}" required>
+        <label for="isbn">ISBN</label>
+        <input type="text" class="form-control" id="isbn" name="isbn" placeholder="ISBN" value="{{ old('isbn')}}" required>
+        <label for="disponibles">Disponibles</label>
+        <input type="text" class="form-control" id="disponibles" name="disponibles" placeholder="Disponibles" value="{{ old('disponibles')}}" required>
+        <label for="categorias">Categorias</label>
+        <input type="number" class="form-control" id="category" name="category" placeholder="Categorias" value="{{ old('category')}}" required>
+        {{ csrf_field() }}
         <label for="book">Img</label>
-        <input type="text" class="form-control" id="img" name="img" placeholder="img" value="{{ old('img')}}" required>       
-     
+        <!-- <input type="text" class="form-control" id="img" name="img" placeholder="img" value="{{ old('img')}}" required>    -->
+        <input type="file" class="form-control" id="img" name="img" placeholder="img" value="{{ old('img')}}" required>      
      
         </div>
         @if($errors->any)
