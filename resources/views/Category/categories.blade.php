@@ -1,5 +1,5 @@
-@extends('base.index')
-@section('content')
+@extends('base.info')
+@section('admin')
 <div class="row">
     <div class="col">
     <h2>TABLA DE CATEGORIAS</h2>

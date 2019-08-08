@@ -24,7 +24,14 @@
         <label for="disponibles">Disponibles</label>
         <input type="text" class="form-control" id="disponibles" name="disponibles" placeholder="Disponibles" value="{{ old('disponibles')}}" required>
         <label for="categorias">Categorias</label>
-        <input type="number" class="form-control" id="category" name="category" placeholder="Categorias" value="{{ old('category')}}" required>
+        <!-- <input type="number" class="form-control" id="category" name="category" placeholder="Categorias" value="{{ old('category')}}" required> -->
+        <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+    <select class="form-control"  id="category" name="category" placeholder="categorias">
+    @foreach($categories as $category)
+      <option>{{$category-> id}}</option>
+   
+      @endforeach
+    </select>
         {{ csrf_field() }}
         <label for="book">Img</label>
         <!-- <input type="text" class="form-control" id="img" name="img" placeholder="img" value="{{ old('img')}}" required>    -->
@@ -44,7 +51,7 @@
         <div class="row ">
         <div class="col btn-aling">          
             <button class="btn btn-danger" type="submit"> <i class="fas fa-user-plus"></i> Submit</button>
-            <button type="button" href="/books/{{$report->id}}/confirmDelete" class="btn btn-primary">Delete</button>            
+            <button type="button"  class="btn btn-primary">Delete</button>            
             <a class="btn btn-dark" href="/books">Back</a>
         </div>
         <!-- <div class="col-1"><button class="btn btn-danger" type="submit">Submit</button></div>            -->
