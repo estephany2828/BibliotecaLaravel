@@ -81,7 +81,8 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    // public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
         $report = Category::findOrFail($id);
         $report->nombre = $request->get('name');           
@@ -95,7 +96,13 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    // public function destroy(Category $category)
+    // {
+    //     $report = Category::findOrFail($id);
+    //     $report->delete();
+    //     return redirect('/categories');
+    // }
+    public function destroy($id)
     {
         $report = Category::findOrFail($id);
         $report->delete();

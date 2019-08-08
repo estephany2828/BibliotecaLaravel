@@ -11,6 +11,7 @@
     <div class="card">
   <div class="card-body">
   <form action="/categories/{{$report->id}}" method="POST">
+
     @csrf
     @method('delete')
         <div class="form-group example-container">
