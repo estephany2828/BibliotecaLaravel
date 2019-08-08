@@ -49,7 +49,7 @@ class BookController extends Controller
             'autor' => 'required',
             'agno' => 'required|numeric',
             'isbn' => 'required',
-            'img' => 'imagen',
+            'img' => 'required',
 
         ]);
         $report= new Book();

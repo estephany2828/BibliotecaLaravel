@@ -25,9 +25,11 @@ Route::get('/inicio', 'DashboardController@index');
 Route::resource('/books', 'BookController');
 Route::resource('/users', 'UserController');
 Route::resource('/reserves', 'ReserveController');
+Route::resource('/categories', 'CategoryController');
 Route::get('/users/{id}/confirmDelete', 'UserController@confirmDelete');
 Route::get('/reserves/{id}/confirmDelete', 'ReserveController@confirmDelete');
 Route::get('/books/{id}/confirmDelete', 'BookController@confirmDelete');
+Route::get('/categories/{id}/confirmDelete', 'CategoryController@confirmDelete');
 Route::get('/reserves/create/{id}', 'BookController@confirm');
 Route::get('', 'BookController@biblio');
 

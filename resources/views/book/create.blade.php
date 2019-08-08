@@ -44,7 +44,7 @@
         <div class="row ">
         <div class="col btn-aling">          
             <button class="btn btn-danger" type="submit"> <i class="fas fa-user-plus"></i> Submit</button>
-            <button type="button" class="btn btn-primary">Delete</button>            
+            <button type="button" href="/books/{{$report->id}}/confirmDelete" class="btn btn-primary">Delete</button>            
             <a class="btn btn-dark" href="/books">Back</a>
         </div>
         <!-- <div class="col-1"><button class="btn btn-danger" type="submit">Submit</button></div>            -->

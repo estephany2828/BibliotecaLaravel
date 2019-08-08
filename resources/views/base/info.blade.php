@@ -14,8 +14,12 @@
   <a class="mdl-navigation__link" href="{{ url('/users') }}" >USER</a>
   </li>
   <li class="nav-item">
+  <a class="mdl-navigation__link" href="{{ url('/categories') }}" >CATEGORIAS</a>
+  </li>
+  <li class="nav-item">
   <a class="mdl-navigation__link" href="{{ url('/books') }}" >BOOK</a>
   </li>
+
 
 </ul>       
        
